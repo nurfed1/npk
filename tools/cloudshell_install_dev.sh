@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# curl https://npkproject.io/cloudshell_install_dev.sh | bash
+# source <(curl -fsSL https://raw.githubusercontent.com/nurfed1/npk/main/tools/cloudshell_install_dev.sh)
 
 NODE_VERSION=20.19.2
 
@@ -44,13 +44,14 @@ fi
 # Pull the repo:
 if [[ ! -f /aws/mde/npk/README.md ]]; then
 	echo "[*] Cloning the NPK repo"
-	git clone https://github.com/c6fc/npk.git /aws/mde/npk > /dev/null
+	git clone https://github.com/nurfed1/npk.git /aws/mde/npk > /dev/null
 fi
 
 # Run the deploy:
 cd /aws/mde/npk
+git remote set-url origin https://github.com/nurfed1/npk.git
 git checkout dev
-git pull
+git pull --ff-only origin dev
 
 echo
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"

@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/c6fc/npk.git"
+    "url": "git+https://github.com/nurfed1/npk.git"
   },
   "config": {
     "tf_version": "1.11.4"
@@ -23,9 +23,9 @@
   "author": "brad@bradwoodward.io",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/c6fc/npk/issues"
+    "url": "https://github.com/nurfed1/npk/issues"
   },
-  "homepage": "https://github.com/c6fc/npk#readme",
+  "homepage": "https://github.com/nurfed1/npk#readme",
   "dependencies": {
     "@c6fc/sonnetry": "^3.1.5",
     "aws-sdk": "^2.1018.0",
