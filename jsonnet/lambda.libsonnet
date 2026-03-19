@@ -16,7 +16,7 @@ local lambda_function(name, config, role_policy) = {
 			["npm_install-" + name]: {
 				provisioner: [{
 					"local-exec": {
-						command: "cd %s/lambda_functions/%s/ && npm install" % [sonnetry.path(), name],
+						command: "cd %s/lambda_functions/%s/ && npm ci --omit=dev --no-audit --no-fund --silent" % [sonnetry.path(), name],
 					}
 				}], 
 				

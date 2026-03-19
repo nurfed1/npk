@@ -1083,7 +1083,7 @@ local regionKeys = std.objectFields(settings.regions);
 
 				    provisioner: {
 				    	"local-exec": {
-				        	command: "aws configure set default.s3.multipart_threshold 5GB",
+				        	command: "aws configure set default.s3.multipart_threshold 5GB >/dev/null 2>&1",
 					    }
 				    }
 				},
@@ -1094,7 +1094,7 @@ local regionKeys = std.objectFields(settings.regions);
 
 				    provisioner: {
 				    	"local-exec": {
-				        	command: "aws s3 sync s3://npk-dictionary-west-2-20181029005812750900000002 s3://${aws_s3_bucket.dictionary.id} --metadata-directive COPY --request-payer requester --source-region us-west-2 --region " + settings.primaryRegion,
+				        	command: "aws s3 sync s3://npk-dictionary-west-2-20181029005812750900000002 s3://${aws_s3_bucket.dictionary.id} --metadata-directive COPY --request-payer requester --source-region us-west-2 --region " + settings.primaryRegion + " --only-show-errors",
 					    }
 				    },
 
