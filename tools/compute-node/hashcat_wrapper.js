@@ -61,7 +61,6 @@ function getHashcatParams(manifest) {
 
 	var params = [
 		"--quiet",
-		"-O",
 		"-o",
 		"/potfiles/cracked_hashes-" + instance_id + ".txt",
 		"--outfile-check-dir",
@@ -79,6 +78,11 @@ function getHashcatParams(manifest) {
 		"--status-timer",
 		"30"
 	];
+
+	// Mode 19850 only ships pure kernels in our hashcat bundle.
+	if (String(manifest.hashType) !== "19850") {
+		params.splice(1, 0, "-O");
+	}
 
 	if (manifest.manualArguments) {
 		console.log("Adding manual arguments:", manifest.manualArguments.split(" "));

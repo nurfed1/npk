@@ -1814,6 +1814,10 @@ angular
     });
 
     $scope.getTypeFromHash = function(hashId) {
+      if (String(hashId) == "19850") {
+        return "SCCM Media Variables (CryptDeriveKey AES-128)";
+      }
+
       var type = false;
       Object.keys(pricingSvc.hashTypes).forEach(function(e) {
         if (pricingSvc.hashTypes[e] == hashId) {

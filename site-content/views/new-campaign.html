@@ -33,7 +33,7 @@
                           <input id="mask" type="text" name="mask" class="form-control" ng-model="hashType" ng-change="updateInstances()">
                         </div>
                       </div>
-                      {{ pricingSvc.hashTypes | equals:hashType }}
+                      {{ hashType == 19850 ? 'SCCM Media Variables (CryptDeriveKey AES-128)' : (pricingSvc.hashTypes | equals:hashType) }}
                       <div ng-show="isSalted()" class="alert alert-outline-warning" role="alert">
                         <div class="alert-icon">
                           <i class="icon-close"></i>

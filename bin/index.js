@@ -133,7 +133,7 @@ async function deploy(skipInit, autoApprove) {
 	console.log(`[+] Configurations updated successfully. Preparing to deploy.`);
 
 	try {
-		sonnetry.apply(skipInit, autoApprove);
+		await sonnetry.apply(skipInit, autoApprove);
 	} catch (e) {
 		console.trace(e);
 		console.log('\n[!] Failed to apply configuration.')
